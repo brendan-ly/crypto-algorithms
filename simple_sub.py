@@ -2,13 +2,13 @@
 Problem 1: Break Simple Substitution
 
 Sources: 
-https://www.geeksforgeeks.org/python/alphabet-range-in-python/
 
-KEY=KFAZSROBCWDINUELTHQGXVPJMY
+import string: https://www.geeksforgeeks.org/python/alphabet-range-in-python/
+
 """
 import string
 
-ciphertext = input()
+ciphertext = input("Enter the ciphertext: ")
 
 ciphertext = ciphertext.replace(" ", "")
 
@@ -21,6 +21,8 @@ for letter in ciphertext:
 
 sorted_letter_dict = {k: v for k, v in sorted(letter_dict.items(), key = lambda item: item[1], reverse=True)}
 
+print("Letter Frequency Counts:")
+
 for letter, freq in sorted_letter_dict.items():
   print(letter + ": " + str(freq))
 
@@ -29,7 +31,7 @@ while True:
   if key == 'exit':
     break
   elif len(key) == 26:
-    alphabet = string.ascii_lowercase
+    alphabet = string.ascii_lowercase # library from https://www.geeksforgeeks.org/python/alphabet-range-in-python/
     mapping = {c: p for (c, p) in zip(key, alphabet)}
     # print(mapping)
     decrypted_plain = ""
